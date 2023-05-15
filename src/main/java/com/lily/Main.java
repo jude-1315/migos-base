@@ -14,7 +14,10 @@ public class Main {
 
     // add a new method for rest endpoint
     @GetMapping("/")
-    public String greet(){
-        return "Hello";
+    public GreetResponse greet(){
+
+        return new GreetResponse("Hello world");
     }
+
+    record GreetResponse(String greet) {}
 }
